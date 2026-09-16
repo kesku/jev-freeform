@@ -1,0 +1,17 @@
+{
+  "name": "jev-freeform",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node main.mjs",
+    "format": "prettier --write *.mjs public/* package.json README.md",
+    "format:check": "prettier --check *.mjs public/* package.json README.md"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
+  }
+}

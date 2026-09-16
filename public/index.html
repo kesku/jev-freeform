@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  /><title>Jev Freeform</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <header>
+    <div>
+      <b>Jev Freeform</b><small>A conversation, one character at a time.</small>
+    </div>
+    <div>
+      <button id="new">New chat</button> <button id="inspect">Inspect</button>
+    </div>
+  </header>
+  <div class="layout">
+    <main>
+      <div id="messages">
+        <div id="empty" class="empty">
+          <h1>What’s on your mind?</h1>
+          <p class="muted">
+            Talk to Jev. Open Inspect to see how each reply takes shape.
+          </p>
+          <div class="examples">
+            <button data-example="hello">Say hello</button
+            ><button data-example="is-even">Ask a question</button>
+          </div>
+        </div>
+      </div>
+      <div class="composer-wrap">
+        <form id="form">
+          <textarea
+            id="prompt"
+            aria-label="Message Jev"
+            placeholder="Message Jev…"
+          ></textarea>
+          <div class="controls">
+            <button type="button" id="settings">Reply settings</button
+            ><button id="send" type="submit">Send ↑</button>
+          </div>
+        </form>
+        <p class="hint">
+          Enter to send · Shift + Enter for a new line · Experimental chat
+          powered by Jev Choice
+        </p>
+      </div>
+    </main>
+    <aside id="panel" hidden>
+      <div class="asideHead">
+        <h2>Response inspector</h2>
+        <button id="close" aria-label="Close inspector">×</button>
+      </div>
+      <p id="inspectPrompt" class="muted">
+        Send a message to inspect its decisions.
+      </p>
+      <div id="stats" class="stats"></div>
+      <div id="debug" hidden>
+        <button id="pause">Pause</button>
+        <button id="step">Single step</button>
+        <button id="resume">Resume</button>
+      </div>
+      <label for="decision">Decision</label
+      ><select id="decision"></select>
+      <p id="decisionStatus" class="muted"></p>
+      <div id="distribution"></div>
+      <details>
+        <summary>All candidate continuations</summary>
+        <div id="menu" class="menu"></div>
+      </details>
+      <details>
+        <summary>Controller intervention</summary>
+        <pre id="intervention"></pre>
+      </details>
+      <details>
+        <summary>Raw request</summary>
+        <pre id="request"></pre>
+      </details>
+      <details>
+        <summary>Raw response</summary>
+        <pre id="response"></pre>
+      </details>
+      <button id="download">Download trace</button>
+    </aside>
+  </div>
+  <dialog id="config">
+    <h3>Reply settings</h3>
+    <label for="mode">Raw-character decoding</label
+    ><select id="mode">
+      <option value="search">Search and backtrack</option>
+      <option value="greedy">Greedy baseline</option></select
+    ><label for="budget">Maximum API calls per reply</label
+    ><input id="budget" type="number" min="1" max="300" value="120" /><button
+      id="saveSettings"
+      style="margin-top: 20px"
+    >
+      Done
+    </button>
+  </dialog>
+  <script src="/app.js" defer></script>
+</html>

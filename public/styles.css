@@ -1,0 +1,289 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #151419;
+  color: #e9e6ee;
+  font:
+    15px system-ui,
+    -apple-system,
+    sans-serif;
+}
+button,
+textarea,
+select,
+input {
+  font: inherit;
+  color: inherit;
+}
+button {
+  border: 1px solid #3e3748;
+  background: #27222f;
+  padding: 9px 14px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+header {
+  height: 65px;
+  border-bottom: 1px solid #302b37;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+}
+header small {
+  margin-left: 15px;
+  color: #a89faf;
+}
+.layout {
+  display: flex;
+  height: calc(100dvh - 65px);
+}
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+#messages {
+  flex: 1;
+  overflow: auto;
+  padding: 35px max(24px, calc((100% - 760px) / 2));
+}
+.empty {
+  text-align: center;
+  padding-top: 12vh;
+}
+.empty h1 {
+  font-size: 32px;
+  letter-spacing: -1px;
+}
+.muted {
+  color: #a49aaa;
+  font-size: 13px;
+}
+.examples {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+.turn {
+  margin-bottom: 35px;
+}
+.user {
+  margin-left: auto;
+  max-width: 85%;
+  width: fit-content;
+  background: #302839;
+  padding: 14px 18px;
+  border-radius: 18px 18px 4px 18px;
+  white-space: pre-wrap;
+}
+.author {
+  font-size: 13px;
+  font-weight: 650;
+  color: #d8b0eb;
+  margin: 25px 0 12px;
+}
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font:
+    14px/1.7 ui-monospace,
+    SFMono-Regular,
+    monospace;
+}
+.code {
+  font:
+    16px/1.75 system-ui,
+    -apple-system,
+    sans-serif;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  min-height: 45px;
+}
+.foot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: #b2a6bb;
+}
+.foot button {
+  font-size: 12px;
+  padding: 5px 9px;
+}
+.composer-wrap {
+  padding: 15px 24px 22px;
+}
+form {
+  max-width: 760px;
+  margin: auto;
+  background: #24202b;
+  border: 1px solid #4a4055;
+  border-radius: 18px;
+  padding: 12px;
+}
+textarea {
+  width: 100%;
+  height: 65px;
+  resize: none;
+  outline: none;
+  background: none;
+  border: 0;
+  padding: 8px;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#send {
+  background: #d4b4e9;
+  color: #24152f;
+  font-weight: 650;
+  border: 0;
+}
+.hint {
+  text-align: center;
+  font-size: 11px;
+  color: #93899f;
+  margin: 9px 0 0;
+}
+aside {
+  width: 430px;
+  max-width: 48vw;
+  background: #1c1723;
+  border-left: 1px solid #3b3147;
+  padding: 22px;
+  overflow: auto;
+}
+aside[hidden] {
+  display: none;
+}
+.asideHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h2 {
+  font-size: 16px;
+}
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 20px 0;
+}
+.stat {
+  padding: 12px;
+  background: #2a2233;
+  border-radius: 9px;
+  font-size: 12px;
+  color: #aa9eb6;
+}
+.stat b {
+  display: block;
+  color: #eee5f5;
+  font-size: 17px;
+  margin-top: 7px;
+}
+select,
+input {
+  background: #292131;
+  border: 1px solid #4a3d56;
+  border-radius: 7px;
+  padding: 8px;
+  width: 100%;
+}
+label {
+  display: block;
+  font-size: 12px;
+  margin: 18px 0 7px;
+  color: #bcadca;
+}
+details {
+  margin: 20px 0;
+}
+summary {
+  cursor: pointer;
+  font-size: 13px;
+}
+details pre {
+  font-size: 11px;
+  background: #141017;
+  padding: 12px;
+  max-height: 320px;
+  overflow: auto;
+}
+.prob {
+  font:
+    12px ui-monospace,
+    monospace;
+  margin: 14px 0;
+}
+.prob div {
+  display: flex;
+  justify-content: space-between;
+}
+.track {
+  background: #382b43;
+  height: 4px;
+  margin-top: 7px;
+}
+.fill {
+  background: #c49bde;
+  height: 4px;
+}
+.menu {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  max-height: 250px;
+  overflow: auto;
+  margin-top: 12px;
+}
+.menu code {
+  padding: 5px;
+  background: #31253c;
+  border-radius: 5px;
+  font-size: 11px;
+}
+dialog {
+  background: #241c2e;
+  color: #eee;
+  border: 1px solid #51405f;
+  border-radius: 15px;
+  padding: 25px;
+  width: 350px;
+}
+dialog::backdrop {
+  background: #0008;
+}
+@media (max-width: 850px) {
+  header small {
+    display: none;
+  }
+  aside {
+    position: fixed;
+    right: 0;
+    top: 65px;
+    bottom: 0;
+    width: 420px;
+    max-width: 100%;
+    box-shadow: -25px 0 60px #0008;
+  }
+  #messages {
+    padding: 24px;
+  }
+  .examples {
+    flex-wrap: wrap;
+  }
+}
